@@ -60,15 +60,16 @@ namespace Session01
             TextBox txtEditedEmpName = (TextBox)gvDetails.Rows[e.RowIndex].FindControl("txtEmployeeName");
             TextBox txtEditedEmail = (TextBox)gvDetails.Rows[e.RowIndex].FindControl("txtEmail");
             TextBox txtEditedDOB = (TextBox)gvDetails.Rows[e.RowIndex].FindControl("txtDOB");
-            CrudOperations("UPDATE", txtEditedEmpName.Text, txtEditedEmail.Text, txtEditedDOB.Text, EmployeeID);
+            DateTime DOB = Convert.ToDateTime(txtEditedDOB.Text);
+            CrudOperations("UPDATE", txtEditedEmpName.Text, txtEditedEmail.Text, DOB, EmployeeID);
 
         }
         protected void gvDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int EmployeeID = Convert.ToInt32(gvDetails.DataKeys[e.RowIndex].Values["EmployeeID"].ToString());
-            CrudOperations("DELETE", "", "", "", EmployeeID);
+            CrudOperations("DELETE", "", "", DateTime.Now, EmployeeID);
         }
-        protected void CrudOperations(string status, string EmployeeName, string Email, string DOB, int EmployeeID)
+        protected void CrudOperations(string status, string EmployeeName, string Email, DateTime DOB, int EmployeeID)
         {
             conn.Open();
             SqlCommand cmd = new SqlCommand("CrudOperations", conn);

@@ -32,22 +32,17 @@ namespace Oops_Concepts
         {
             Console.WriteLine("Passenger Details");
         }
-
-        protected void ShowingTicket()
-        {
-            Console.WriteLine("Show ticket");
-        }
     }
-   
+
 
     // By using interface Multiple inheritance is resolved
-    interface ISendTicket { 
+    interface ISendTicket
+    {
         void SendTicket();
     }
     // Child class inherting the parent class -> Single inheritance
     class BusTicketBooking : TicketBooking, ISendTicket
     {
-
         // Overriding the parent class method 
         public override void Booking()
         {
@@ -58,8 +53,9 @@ namespace Oops_Concepts
         {
             Console.WriteLine("Bus ticket seat number & passenger detail and time");
         }
+
     }
-    class AirLineBooking : TicketBooking , ISendTicket
+    class AirLineBooking : TicketBooking, ISendTicket
     {
         //Overriding the parent class method
         public override void Booking()
@@ -75,12 +71,12 @@ namespace Oops_Concepts
 
     // Multi Level Inheritance -> inherting the child class which inhertis parent class 
     class ShowTicketCounter : BusTicketBooking
-    { 
+    {
 
     }
     // Hierarchical Inhertiance - n number of 
     class TrianTicketBooking : TicketBooking
-    { 
+    {
     }
-   
+
 }

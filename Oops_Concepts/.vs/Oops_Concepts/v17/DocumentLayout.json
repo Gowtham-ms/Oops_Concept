@@ -1,20 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concepts\\",
+  "WorkspaceRootPath": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Oops_Concepts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C653AF27-76B5-4C27-A810-795EF7744987}|Oops_Concepts.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concepts\\ticketbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C653AF27-76B5-4C27-A810-795EF7744987}|Oops_Concepts.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\oops_concepts\\ticketbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C653AF27-76B5-4C27-A810-795EF7744987}|Oops_Concepts.csproj|solutionrelative:ticketbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C653AF27-76B5-4C27-A810-795EF7744987}|Oops_Concepts.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concepts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C653AF27-76B5-4C27-A810-795EF7744987}|Oops_Concepts.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Oops_Concepts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C653AF27-76B5-4C27-A810-795EF7744987}|Oops_Concepts.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA12CC55-84CD-4E07-A655-6F839055A627}|..\\AbstractClass_InterfaceSession\\AbstractClass_InterfaceSession.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\abstractclass_interfacesession\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\AbstractClass_InterfaceSession\\Office.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA12CC55-84CD-4E07-A655-6F839055A627}|..\\AbstractClass_InterfaceSession\\AbstractClass_InterfaceSession.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\abstractclass_interfacesession\\office.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\AbstractClass_InterfaceSession\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,53 +46,50 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concepts\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Oops_Concepts\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concepts\\Program.cs",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Oops_Concepts\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T02:52:59.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T02:52:59.572Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TicketBooking.cs",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concepts\\TicketBooking.cs",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Oops_Concepts\\TicketBooking.cs",
               "RelativeDocumentMoniker": "TicketBooking.cs",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concepts\\TicketBooking.cs",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Oops_Concepts\\TicketBooking.cs",
               "RelativeToolTip": "TicketBooking.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-30T02:32:48.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Office.cs",
               "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\AbstractClass_InterfaceSession\\Office.cs",
-              "RelativeDocumentMoniker": "..\\AbstractClass_InterfaceSession\\Office.cs",
+              "RelativeDocumentMoniker": "..\\..\\AbstractClass_InterfaceSession\\Office.cs",
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\AbstractClass_InterfaceSession\\Office.cs",
-              "RelativeToolTip": "..\\AbstractClass_InterfaceSession\\Office.cs",
+              "RelativeToolTip": "..\\..\\AbstractClass_InterfaceSession\\Office.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAASwEMAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T02:18:50.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T02:18:50.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\AbstractClass_InterfaceSession\\Program.cs",
-              "RelativeDocumentMoniker": "..\\AbstractClass_InterfaceSession\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\AbstractClass_InterfaceSession\\Program.cs",
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\AbstractClass_InterfaceSession\\Program.cs",
-              "RelativeToolTip": "..\\AbstractClass_InterfaceSession\\Program.cs",
+              "RelativeToolTip": "..\\..\\AbstractClass_InterfaceSession\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-30T02:18:10.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-30T02:18:10.102Z"
             }
           ]
         }

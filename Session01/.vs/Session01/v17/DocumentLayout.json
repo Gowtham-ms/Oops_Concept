@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\",
+  "WorkspaceRootPath": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|solutionrelative:details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\session01\\details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\session01\\details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|solutionrelative:details.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\userregistration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|solutionrelative:details.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\userregistration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|solutionrelative:userregistration.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\userregistration.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\userregistration.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A51B27A-A917-4D8C-B7E4-3F3170DD2941}|Session01.csproj|solutionrelative:userregistration.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,26 +50,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Details.aspx",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\Details.aspx",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\Details.aspx",
               "RelativeDocumentMoniker": "Details.aspx",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\Details.aspx",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\Details.aspx",
               "RelativeToolTip": "Details.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-27T21:13:01.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-27T21:13:01.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Details.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\Details.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\Details.aspx.cs",
               "RelativeDocumentMoniker": "Details.aspx.cs",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\Details.aspx.cs",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\Details.aspx.cs",
               "RelativeToolTip": "Details.aspx.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA1wA8AAAAcAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAApwEMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-27T01:33:16.544Z",
               "EditorCaption": ""
@@ -78,40 +77,37 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UserRegistration.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\UserRegistration.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\UserRegistration.aspx.cs",
               "RelativeDocumentMoniker": "UserRegistration.aspx.cs",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\UserRegistration.aspx.cs",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\UserRegistration.aspx.cs",
               "RelativeToolTip": "UserRegistration.aspx.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T01:38:21.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-26T01:38:21.263Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Login.aspx",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\Login.aspx",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\Login.aspx",
               "RelativeDocumentMoniker": "Login.aspx",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\Login.aspx",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\Login.aspx",
               "RelativeToolTip": "Login.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-26T01:37:38.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-26T01:37:38.291Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UserRegistration.aspx",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\UserRegistration.aspx",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\UserRegistration.aspx",
               "RelativeDocumentMoniker": "UserRegistration.aspx",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Session01\\UserRegistration.aspx",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\Session01\\UserRegistration.aspx",
               "RelativeToolTip": "UserRegistration.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-03-26T01:37:26.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-26T01:37:26.408Z"
             }
           ]
         }

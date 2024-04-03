@@ -16,7 +16,6 @@ namespace Oops_Concepts
             TicketBooking _ticketBooking = new TicketBooking();
             _ticketBooking.AddPassengers("Gowtham");
             _ticketBooking.AddPassengers("Gowtham", "Passportnumber");
-
             // Using Parent class object for child class
             _ticketBooking = new BusTicketBooking();
             _ticketBooking.Booking();

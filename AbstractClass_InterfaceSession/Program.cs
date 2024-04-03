@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Oops_Concepts;
 
 namespace AbstractClass_InterfaceSession
 {
@@ -12,8 +11,6 @@ namespace AbstractClass_InterfaceSession
     {
         static void Main(string[] args)
         {
-            TicketBooking ticketBooking = new TicketBooking();
-
 
         }
     }
