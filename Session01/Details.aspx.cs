@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Globalization;
 namespace Session01
 {
     public partial class Details : System.Web.UI.Page
@@ -60,7 +61,7 @@ namespace Session01
             TextBox txtEditedEmpName = (TextBox)gvDetails.Rows[e.RowIndex].FindControl("txtEmployeeName");
             TextBox txtEditedEmail = (TextBox)gvDetails.Rows[e.RowIndex].FindControl("txtEmail");
             TextBox txtEditedDOB = (TextBox)gvDetails.Rows[e.RowIndex].FindControl("txtDOB");
-            DateTime DOB = Convert.ToDateTime(txtEditedDOB.Text);
+            DateTime DOB = DateTime.ParseExact(txtEditedDOB.Text, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture); 
             CrudOperations("UPDATE", txtEditedEmpName.Text, txtEditedEmail.Text, DOB, EmployeeID);
 
         }

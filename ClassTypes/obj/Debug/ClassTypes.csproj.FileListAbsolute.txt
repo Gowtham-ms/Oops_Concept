@@ -1,0 +1,7 @@
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\bin\Debug\ClassTypes.exe.config
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\bin\Debug\ClassTypes.exe
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\bin\Debug\ClassTypes.pdb
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\obj\Debug\ClassTypes.csproj.AssemblyReference.cache
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\obj\Debug\ClassTypes.csproj.CoreCompileInputs.cache
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\obj\Debug\ClassTypes.exe
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\ClassTypes\obj\Debug\ClassTypes.pdb
