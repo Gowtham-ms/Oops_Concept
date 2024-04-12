@@ -50,7 +50,7 @@ without disturbing our old logic and implement a new logic
 
 Tomorrow : 
 1. DateTime 
-2. Multiple class -> Concrete class, Static class, Partial class , Abstract class , Sealed class, Nested Class (it is not in use in realtime)
+2. Types of class -> Concrete class, Static class, Partial class , Abstract class , Sealed class, Nested Class (it is not in use in realtime)
 3. Interview Questions -> Ado.net , C# 
 4. framework and why we are using it and types
 .Net Framework
@@ -63,11 +63,84 @@ Ado.net is nothing but a object relational mapper , it will interact with your d
 Entity framework is orm tool 
 
 
-1. Concrete Class is a normal class we can create object for the class , and we can get and set properties inside our class
-2. Static class
+1. Concrete Class :
+ is a normal class we can create object for the class , and we can get and set properties inside our class
+
+2. Static class : you can't create object 
 i. Static class keyword is static 
 ii. Static class cannot be instantiated you can not create object 
+iii. only static method can be inside the static class 
 
-Tomorrow :
-Other classes
-Interview Questions ado.net and c#
+3. Partial class : you can create object 
+i. Splitting a single class to multiple class 
+ii. Partial keyword
+iii. for partial class we can create object
+
+4. Sealed Class : you can create object 
+i. If we are declaring a class as sealed , then it can't be inherited
+ii. We can create object
+iii. When there is a sealed method then you can't override that method
+iv. Sealed keyword
+
+5. Nested class : 
+i. A class inside a class
+ii. you can create object 
+iii. you can create 2 property in same name one in outer class and other in inner class
+
+
+We can Discuss about all previous class 
+- we can start SQL SP , Functions , Indexes
+
+Today : 10-04-2024
+- Temp table 
+- Table variable
+- Cursor
+
+11-04-2024
+
+SOLID Principles
+
+i. Tightly Coupled applications 
+
+100s aplication
+Class A --> Class B 
+Class B ---> Class A 
+If we have any future requirement for tightly application then you need to change the whole code 
+Just assume when ur class is depended with other class then it is tightly coupled
+
+Class A 
+we have 1 functionality here 
+
+Class B
+functionality will return the functionality for class A 
+
+
+ii. Loosely coupled applications
+When you develop an application using this SOLID prinicple is loosely coupled
+We can also reuse the code and enhance the code , then we have lot of advantage
+
+Base Class A
+Changing Base Class A 
+Method has values for child B
+
+Child Class B : A 
+
+if we inherit that method we can easily get the values of class A 
+
+SOLID principle is nothing but design principle for software problems, we definitely have to use this principle to make our code loosely coupled
+S single responsibility priniciple SRP
+O open closed principle OCP 
+L liskov substitution principle LSP
+I Interface segregation principle ISP
+D dependency inversion priniciple DIP
+
+
+1. Single responisibity prinicple : Each and every class or module should have only 1 reason to change 
+2. Open Closed Principle : Open for extension and closed for modification
+3. Liskov substituion principle : 
+
+bunch of toys like cars, trucks and airplanes
+is like saying that if you have a toy box, you can swap any toy with another one as long as they both do the same things
+if you can play with a car, you should also able to play with a truck or airplanes without any problems
+
+in programming you can say that you should be able to use any subclass of a class as a replacement for the parent class without breaking the program 

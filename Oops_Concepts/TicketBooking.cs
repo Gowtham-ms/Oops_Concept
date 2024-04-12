@@ -78,5 +78,22 @@ namespace Oops_Concepts
     class TrianTicketBooking : TicketBooking
     {
     }
+    // Method is code block which have our logic
+    // whenever a method is returning a value in another method then at that time we may call function 
+
+    public class EmptyClass : EmptyClassWithLogic {
+        // This EmptyMethod() we can call as a method
+        public void EmptyMethod() {
+            // This one we can call as a function 
+            int x = EmptyMethodWithLogic();
+            Console.WriteLine(x);
+        }
+    }
+    // with some return logic
+    public class EmptyClassWithLogic { 
+        public int EmptyMethodWithLogic() {
+            return 0;
+        }
+    }
 
 }
