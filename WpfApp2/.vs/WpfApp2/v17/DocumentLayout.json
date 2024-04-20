@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +38,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAACMBAAAAAAAAAAAAAGkBAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T14:46:27.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\MainWindow.xaml",
@@ -45,20 +58,7 @@
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-11T16:50:05.459Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAABsBAAAAAAAAAADgv10BAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T16:50:04.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-17T14:38:11.584Z"
             }
           ]
         }

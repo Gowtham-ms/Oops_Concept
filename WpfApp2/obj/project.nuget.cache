@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "OjrpeK2AEmDxIPi+dpqstwN/5sCpFtmNgNnugHqFjRi5YsOBeWjQTG2sNLD5IojnYCVpROtANQSyObhr0aflUA==",
+  "dgSpecHash": "V3CEIMlXBaujT3zscllgSlXeV0dQYrtYGvHoALL/pqjAjiWZu7LsdFVpeMqW+VcsW13HZjpfpU2vRvEHPW9OjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\WpfApp2\\WpfApp2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\msgow\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
+    "C:\\Users\\msgow\\.nuget\\packages\\pdfsharpcore\\1.3.63\\pdfsharpcore.1.3.63.nupkg.sha512",
+    "C:\\Users\\msgow\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
+    "C:\\Users\\msgow\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "C:\\Users\\msgow\\.nuget\\packages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

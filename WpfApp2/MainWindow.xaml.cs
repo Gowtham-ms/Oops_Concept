@@ -6,17 +6,22 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Markup;
+using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
+
 namespace WpfApp2
 {
 
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        private List<string> searchResults = new List<string>();
-        private int itemsPerPage = 1;
+        private List<string> searchResults = [];
+        private readonly int itemsPerPage = 1;
         private int currentPage = 1;
-        private List<int> _paginationButtons = new List<int>();
+        private List<int> _paginationButtons = [];
         public event PropertyChangedEventHandler PropertyChanged;
-        private List<Button> paginationButtons = new List<Button>();
+        private List<Button> paginationButtons = [];
 
         public List<int> PaginationButtons
         {
@@ -34,6 +39,7 @@ namespace WpfApp2
         {
 
             InitializeComponent();
+
             DataContext = this;
             Previous.Visibility = Visibility.Collapsed;
             Next.Visibility = Visibility.Collapsed;
@@ -280,7 +286,9 @@ namespace WpfApp2
         {
             DownloadImagesInRange(1, searchResults.Count);
         }
-
+        private void DownloadCurrent_Click(object sender, RoutedEventArgs e) {
+            DownloadImagesInRange(currentPage, currentPage);
+        }
         private void DownloadImagesInRange(int startNumber, int endNumber)
         {
             try
@@ -291,7 +299,7 @@ namespace WpfApp2
                     for (int i = startNumber; i <= endNumber && i <= searchResults.Count; i++)
                     {
                         string imagePath = searchResults[i - 1];
-                        string downloadPath = System.IO.Path.Combine(downloadFolder, System.IO.Path.GetFileName(imagePath));
+                        string downloadPath = Path.Combine(downloadFolder, Path.GetFileName(imagePath));
                         File.Copy(imagePath, downloadPath, true);
                     }
                     MessageBox.Show("Images downloaded successfully.");
@@ -302,7 +310,7 @@ namespace WpfApp2
                 MessageBox.Show("Failed to download images: " + ex.Message);
             }
         }
-        public string GetDownloadFolder()
+        public static string GetDownloadFolder()
         {
             Microsoft.Win32.OpenFolderDialog dialog = new();
             string? downloadFolder;
@@ -324,9 +332,38 @@ namespace WpfApp2
         {
             if (searchResults != null && searchResults.Count > 0)
             {
-                PrintDialog pd = new PrintDialog();
-                if (pd.ShowDialog() == true)
-                    pd.PrintVisual(claimsImg, "Print Image");
+
+                var dialog = new PrintDialog
+                {
+                    PageRangeSelection = PageRangeSelection.AllPages,
+                    UserPageRangeEnabled = true
+                };
+
+                bool? result = dialog.ShowDialog();
+
+                if (result == true)
+                {
+                    FixedDocument document = new FixedDocument();
+                    FixedPage page = new FixedPage();
+                    page.Width = dialog.PrintableAreaWidth;
+                    page.Height = dialog.PrintableAreaHeight;
+
+                    Image image = new Image();
+                    BitmapImage bitmap = new BitmapImage(new Uri(searchResults[currentPage], UriKind.RelativeOrAbsolute)); 
+                    image.Source = bitmap;
+                    image.Margin = new Thickness(50, 50, 0, 0); 
+                    image.Width = 200;
+                    image.Height = 200;
+
+                    page.Children.Add(image);
+
+                    PageContent content = new PageContent();
+                    ((IAddChild)content).AddChild(page);
+                    document.Pages.Add(content);
+
+                    dialog.PrintDocument(document.DocumentPaginator, "Printing Image");
+
+                }
             }
         }
         private void ZoomInButton_Click(object sender, RoutedEventArgs e)
@@ -374,6 +411,17 @@ namespace WpfApp2
             Reset.Visibility = Visibility.Collapsed;
             paginationStackPanel.Visibility = Visibility.Collapsed;
             claimsImg.Source = null;
+        }
+
+        private void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+            PdfDocument document = new();
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XImage x_Image = XImage.FromFile(searchResults[currentPage-1]);
+            gfx.DrawImage(x_Image, 0, 0);
+            document.Save("output.pdf");
+            document.Close();
         }
     }
 }

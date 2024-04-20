@@ -1,0 +1,7 @@
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\bin\Debug\SOLIDPriniciple.exe.config
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\bin\Debug\SOLIDPriniciple.exe
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\bin\Debug\SOLIDPriniciple.pdb
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\obj\Debug\SOLIDPriniciple.csproj.AssemblyReference.cache
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\obj\Debug\SOLIDPriniciple.csproj.CoreCompileInputs.cache
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\obj\Debug\SOLIDPriniciple.exe
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\SOLIDPriniciple\obj\Debug\SOLIDPriniciple.pdb
