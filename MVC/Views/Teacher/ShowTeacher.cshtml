@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVC.Teacher>
+@{
+    ViewBag.Title = "ShowTeacher";
+}
+
+<h2>Teacher List</h2>
+
+
+@Html.ActionLink("Add new Teacher", "Create")
+
+<table class="table">
+    <tr>
+        <th>
+            Teacher Name
+        </th>
+        <th>
+            Teacher Salary
+        </th>
+        <th>
+            Controls
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(i => item.TeacherName)
+            </td>
+            <td>
+                @Html.DisplayFor(i => item.Salary)
+            </td>
+            <td>
+                @Html.ActionLink("View", "Details", new { id = item.TeacherID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.TeacherID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.TeacherID })
+            </td>
+        </tr>
+    }
+</table>

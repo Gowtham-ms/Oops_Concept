@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.KeyName</h2>
+<br />
+<h2>@ViewData["Message"]</h2>
+<br />
+
+<h2>@TempData["Message"]</h2>
+
+@{
+    TempData.Keep("Message");
+}
+<br />
+<h2>
+    @Session["UserID"]
+</h2>

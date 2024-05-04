@@ -1,0 +1,22 @@
+﻿@model MVC.Teacher
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<p style="color:green"> @ViewBag.Message </p>
+
+<form action="@Url.Action("Create","Teacher")" method="post">
+    <div>
+        <label>Teacher Name</label>
+        @Html.EditorFor(model => model.TeacherName)
+    </div>
+    <div>
+        <label>Salary</label>
+        @Html.EditorFor(model => model.Salary)
+    </div>
+    <div>
+        <input type="submit" value="Add Teacher" />
+    </div>
+</form>

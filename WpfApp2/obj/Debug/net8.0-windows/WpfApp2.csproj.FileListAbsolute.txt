@@ -1,8 +1,6 @@
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\WpfApp2.csproj.AssemblyReference.cache
-C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\Window1.baml
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\ImageRangeInputDialog.g.cs
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\Window1.g.cs
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\WpfApp2_MarkupCompile.cache
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\WpfApp2_MarkupCompile.lref
@@ -47,3 +45,13 @@ C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\WpfApp2.pdb
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\WpfApp2.genruntimeconfig.cache
 C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\ref\WpfApp2.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\ImagePopup.baml
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\obj\Debug\net8.0-windows\ImagePopup.g.cs
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\msgow\Desktop\My desktop\ConsoleApp\Oops_Concept\WpfApp2\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll

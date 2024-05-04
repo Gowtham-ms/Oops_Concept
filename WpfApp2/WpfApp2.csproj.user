@@ -9,21 +9,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ImageRangeInputDialog.xaml.cs">
+    <Compile Update="ImagePopup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window1.xaml.cs">
+    <Compile Update="ImageRangeInputDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ImagePopup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ImageRangeInputDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Window1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

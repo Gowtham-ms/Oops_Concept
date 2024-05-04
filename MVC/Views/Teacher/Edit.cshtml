@@ -1,0 +1,22 @@
+﻿@model MVC.Teacher
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Teacher", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.TeacherID)
+    <div>
+        <label> Teacher Name </label>
+        @Html.EditorFor(model => model.TeacherName)
+    </div>
+    <div>
+        <label>Salary </label>
+        @Html.EditorFor(model => model.Salary)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}

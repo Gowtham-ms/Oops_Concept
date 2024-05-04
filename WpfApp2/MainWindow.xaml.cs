@@ -10,19 +10,36 @@ using System.Windows.Documents;
 using System.Windows.Markup;
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf;
-
+using static System.Net.Mime.MediaTypeNames;
+using Microsoft.Extensions.Configuration;
 namespace WpfApp2
 {
-
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        private List<string> searchResults = [];
+        private readonly List<string> searchResults = [];
         private readonly int itemsPerPage = 1;
         private int currentPage = 1;
         private List<int> _paginationButtons = [];
         public event PropertyChangedEventHandler PropertyChanged;
         private List<Button> paginationButtons = [];
+        public static string documentsPath { get; set; }
+        public class AppConfig {
+            public string GetFolderPath() {
+                var environment = System.Configuration.ConfigurationManager.AppSettings.Get("RUNTIME_ENVIRONMENT");
+                environment = "Dev";
+                var builder = new ConfigurationBuilder()
+                                    .AddJsonFile($"appsettings.json", true, true)
+                                    .AddJsonFile($"appsettings.{environment}.json", true, true);
+                var config = builder.Build();
+                documentsPath = config["AppSettings:documentsPath"];
+                string path = config["DocumentPath"];
+                return documentsPath;
+            }
 
+        }
         public List<int> PaginationButtons
         {
             get { return _paginationButtons; }
@@ -33,97 +50,175 @@ namespace WpfApp2
             }
         }
 
-        protected void OnPropertyChanged([CallerMemberName] string? name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
         public MainWindow()
         {
+            try
+            {
+                InitializeComponent();
+                AppConfig config = new AppConfig();
+                documentsPath = config.GetFolderPath();
+                DataContext = this;
+                HideAllUIElements();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred during initialization");
+            }
+        }
 
-            InitializeComponent();
-
-            DataContext = this;
+        #region ShowHideButtons
+        private void ShowAllUIElements()
+        {
+            Previous.Visibility = Visibility.Visible;
+            Next.Visibility = Visibility.Visible;
+            FirstPage.Visibility = Visibility.Visible;
+            LastPage.Visibility = Visibility.Visible;
+            //PaginationButton_Click = visibility.Visible;
+            DownloadDropdownButton.Visibility = Visibility.Visible;
+            ExportDropdownButton.Visibility = Visibility.Visible;
+            //PrintDropdownButton.Visibility = Visibility.Visible;
+            ZoomInButton.Visibility = Visibility.Visible;
+            ZoomOutButton.Visibility = Visibility.Visible;
+            Reset.Visibility = Visibility.Visible;
+        }
+        private void HideAllUIElements()
+        {
             Previous.Visibility = Visibility.Collapsed;
             Next.Visibility = Visibility.Collapsed;
             FirstPage.Visibility = Visibility.Collapsed;
             LastPage.Visibility = Visibility.Collapsed;
-            Download.Visibility = Visibility.Collapsed;
-            DownloadAll.Visibility = Visibility.Collapsed;
-            Print.Visibility = Visibility.Collapsed;
+            //Download.Visibility = Visibility.Collapsed;
+            //DownloadAll.Visibility = Visibility.Collapsed;
+            //Print.Visibility = Visibility.Collapsed;
             ZoomInButton.Visibility = Visibility.Collapsed;
             ZoomOutButton.Visibility = Visibility.Collapsed;
             Reset.Visibility = Visibility.Collapsed;
+            DownloadDropdownButton.Visibility = Visibility.Collapsed;
+            ExportDropdownButton.Visibility = Visibility.Collapsed;
+            //PrintDropdownButton.Visibility = Visibility.Collapsed;
+            //Export.Visibility = Visibility.Collapsed;
         }
+        #endregion
+
+        #region Search Button Logic
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            if (txtSearch.Text == "")
+            try
             {
-                System.Windows.MessageBox.Show("Enter any claim number to search");
-
-            }
-            else
-            {
-                searchResults.Clear();
-                string SearchClaims = txtSearch.Text;
-                string documentsPath = @"C:\Users\msgow\Downloads\NewFolder";
-                string[] txtFiles = Directory.GetFiles(documentsPath, "*.txt");
-                string pattern = @"\|(\d{10,})\|";
-
-                foreach (string txtFile in txtFiles)
+                if (txtSearch.Text == "")
                 {
-                    string[] lines = System.IO.File.ReadAllLines(txtFile);
-                    bool found = false;
-                    foreach (string line in lines)
+                    MessageBox.Show("Please enter a claim number to search");
+
+                }
+                else
+                {
+                    searchResults.Clear();
+                    string SearchClaims = txtSearch.Text;
+                    //string documentsPath = @"C:\Users\msgow\Downloads\NewFolder";
+
+                    if (!Directory.Exists(documentsPath))
                     {
-                        if (line.Contains(SearchClaims))
+                        MessageBox.Show($"{documentsPath} does not exist");
+                        return;
+                    }
+
+                    string[] txtFiles = Directory.GetFiles(documentsPath, "*.txt");
+                    string pattern = @"\|(\d{10,})\|";
+
+                    foreach (string txtFile in txtFiles)
+                    {
+                        string[] lines = System.IO.File.ReadAllLines(txtFile);
+                        bool found = false;
+                        foreach (string line in lines)
                         {
-                            found = true;
-                            searchResults.Add(documentsPath + "\\" + line.Split('|').FirstOrDefault());
-                        }
-                        else if (found)
-                        {
-                            if (Regex.IsMatch(line, pattern))
+                            if (line.Contains(SearchClaims))
                             {
-                                break;
-                            }
-                            else
-                            {
+                                found = true;
                                 searchResults.Add(documentsPath + "\\" + line.Split('|').FirstOrDefault());
+                            }
+                            else if (found)
+                            {
+                                if (Regex.IsMatch(line, pattern))
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    searchResults.Add(documentsPath + "\\" + line.Split('|').FirstOrDefault());
+                                }
                             }
                         }
                     }
+
+                    if (searchResults.Count > 0)
+                    {
+                        currentPage = 1;
+                        paginationStackPanel.Visibility = Visibility.Visible;
+                        int totalPages = (int)Math.Ceiling((double)searchResults.Count / itemsPerPage);
+                        GeneratePaginationButtons(currentPage, totalPages, 1);
+                        ShowImage();
+                        ShowAllUIElements();
+                        EnablePrevNext();
+                        EnableFirstLast();
+                    }
                 }
 
-                if (searchResults.Count > 0)
-                {
-                    currentPage = 1;
-                    paginationStackPanel.Visibility = Visibility.Visible;
-                    int totalPages = (int)Math.Ceiling((double)searchResults.Count / itemsPerPage);
-                    GeneratePaginationButtons(currentPage, totalPages, 1);
-                    ShowImage();
-                    Previous.Visibility = Visibility.Visible;
-                    Next.Visibility = Visibility.Visible;
-                    FirstPage.Visibility = Visibility.Visible;
-                    LastPage.Visibility = Visibility.Visible;
-                    Download.Visibility = Visibility.Visible;
-                    DownloadAll.Visibility = Visibility.Visible;
-                    Print.Visibility = Visibility.Visible;
-                    ZoomInButton.Visibility = Visibility.Visible;
-                    ZoomOutButton.Visibility = Visibility.Visible;
-                    Reset.Visibility = Visibility.Visible;
-                    EnablePrevNext();
-                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error searching claim number");
+            }
+
         }
+        #endregion
+
+        #region Enabling Prev, Next, First & Last Buttons
         private void EnablePrevNext()
         {
-            if (currentPage == 1)
-                Previous.IsEnabled = false;
-            else
-                Previous.IsEnabled = true;
-            if (currentPage == searchResults.Count)
-                Next.IsEnabled = false;
-            else
-                Next.IsEnabled = true;
+            try
+            {
+                if (currentPage == 1)
+                    Previous.IsEnabled = false;
+                else
+                    Previous.IsEnabled = true;
+                if (currentPage == searchResults.Count)
+                    Next.IsEnabled = false;
+                else
+                    Next.IsEnabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error occurred while enabling Previous and next buttons");
+            }
+
         }
+
+        private void EnableFirstLast()
+        {
+            try
+            {
+                if (currentPage == 1)
+                    FirstPage.IsEnabled = false;
+                else
+                    FirstPage.IsEnabled = true;
+                if (currentPage == searchResults.Count)
+                    LastPage.IsEnabled = false;
+                else
+                    LastPage.IsEnabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error occurred while enabling FirstPage and LastPage buttons");
+            }
+
+        }
+        #endregion
+
+        #region Pagination
 
         private void PaginationButton_Click(object sender, RoutedEventArgs e)
         {
@@ -160,6 +255,7 @@ namespace WpfApp2
             currentPage = clickedPage;
             ShowImage();
             EnablePrevNext();
+            EnableFirstLast();
         }
 
         private void GeneratePaginationButtons(int startPage, int endPage, int clickedPage)
@@ -203,7 +299,7 @@ namespace WpfApp2
             button.Click += PaginationButton_Click;
             if (isClicked)
             {
-                button.Background = Brushes.Red;
+                button.Background = Brushes.LightGray;
             }
             else
             {
@@ -237,58 +333,135 @@ namespace WpfApp2
 
             }
             EnablePrevNext();
-        }
-
-        private void ShowImage()
-        {
-            if (searchResults != null && searchResults.Count != 0)
-            {
-                int startIndex = (currentPage - 1) * itemsPerPage;
-                int endIndex = Math.Min(startIndex + itemsPerPage, searchResults.Count);
-                if (startIndex >= 0 && endIndex > 0)
-                {
-                    claimsImg.Source = new BitmapImage(new Uri(searchResults[startIndex], UriKind.RelativeOrAbsolute));
-                }
-            }
+            EnableFirstLast();
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            if (currentPage > 1)
+            try
             {
-                currentPage--;
-                ShowImage();
-                UpdatePaginationButtons();
+                if (currentPage > 1)
+                {
+                    currentPage--;
+                    ShowImage();
+                    UpdatePaginationButtons();
+                    claimsImg.Width = 521;
+                    claimsImg.Height = 300;
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while navigating to the previous page");
+            }
+
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (currentPage < Math.Ceiling((double)searchResults.Count / itemsPerPage))
+            try
             {
-                currentPage++;
+                if (currentPage < Math.Ceiling((double)searchResults.Count / itemsPerPage))
+                {
+                    currentPage++;
+                    ShowImage();
+                    UpdatePaginationButtons();
+                    claimsImg.Width = 521;
+                    claimsImg.Height = 300;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while navigating to the next page");
+
+            }
+        }
+        private void FirstPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                currentPage = 1;
                 ShowImage();
                 UpdatePaginationButtons();
             }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while navigating to the first page");
+            }
         }
 
+        private void LastPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int totalPages = (int)Math.Ceiling((double)searchResults.Count / itemsPerPage);
+                currentPage = totalPages;
+                ShowImage();
+                UpdatePaginationButtons();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while naviagting to the last page");
+            }
+
+        }
+
+        #endregion
+
+        #region Fetching & Showing Image after searching
+        private void ShowImage()
+        {
+            try
+            {
+                if (searchResults != null && searchResults.Count != 0)
+                {
+                    int startIndex = (currentPage - 1) * itemsPerPage;
+                    int endIndex = Math.Min(startIndex + itemsPerPage, searchResults.Count);
+                    if (startIndex >= 0 && endIndex > 0)
+                    {
+                        claimsImg.Source = new BitmapImage(new Uri(searchResults[startIndex], UriKind.RelativeOrAbsolute));
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while displaying images");
+            }
+        }
+        #endregion
+
+        #region Download Options
         private void Download_Click(object sender, RoutedEventArgs e)
         {
-            var inputDialog = new ImageRangeInputDialog();
-            if (inputDialog.ShowDialog() == true)
+            try
             {
-                int startNumber = inputDialog.StartNumber;
-                int endNumber = inputDialog.EndNumber;
-                DownloadImagesInRange(startNumber, endNumber);
+                var inputDialog = new ImageRangeInputDialog();
+                if (inputDialog.ShowDialog() == true)
+                {
+                    int startNumber = inputDialog.StartNumber;
+                    int endNumber = inputDialog.EndNumber;
+
+                    DownloadImagesInRange(startNumber, endNumber);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while downloading");
+            }
+
         }
         private void DownloadAll_Click(object sender, RoutedEventArgs e)
         {
-            DownloadImagesInRange(1, searchResults.Count);
+            try
+            {
+                DownloadImagesInRange(1, searchResults.Count);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while downloading");
+            }
         }
-        private void DownloadCurrent_Click(object sender, RoutedEventArgs e) {
-            DownloadImagesInRange(currentPage, currentPage);
-        }
+
         private void DownloadImagesInRange(int startNumber, int endNumber)
         {
             try
@@ -305,123 +478,259 @@ namespace WpfApp2
                     MessageBox.Show("Images downloaded successfully.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Failed to download images: " + ex.Message);
+                MessageBox.Show("Failed to download images");
             }
         }
+        private void DownloadCurrent_Click(object sender, RoutedEventArgs e)
+        {
+            DownloadImagesInRange(currentPage, currentPage);
+        }
+        #endregion
+
+        #region Folder Dialog Utility
         public static string GetDownloadFolder()
         {
-            Microsoft.Win32.OpenFolderDialog dialog = new();
-            string? downloadFolder;
-            if (dialog.ShowDialog() == true)
+            try
             {
-                downloadFolder = dialog.FolderName;
-            }
-            else
-            {
-                MessageBox.Show("Folder selection cancelled.");
-                downloadFolder = null;
-            }
-            return downloadFolder;
-        }
-
-
-
-        private void Print_Click(object sender, RoutedEventArgs e)
-        {
-            if (searchResults != null && searchResults.Count > 0)
-            {
-
-                var dialog = new PrintDialog
+                Microsoft.Win32.OpenFolderDialog dialog = new();
+                string? downloadFolder;
+                if (dialog.ShowDialog() == true)
                 {
-                    PageRangeSelection = PageRangeSelection.AllPages,
-                    UserPageRangeEnabled = true
-                };
-
-                bool? result = dialog.ShowDialog();
-
-                if (result == true)
-                {
-                    FixedDocument document = new FixedDocument();
-                    FixedPage page = new FixedPage();
-                    page.Width = dialog.PrintableAreaWidth;
-                    page.Height = dialog.PrintableAreaHeight;
-
-                    Image image = new Image();
-                    BitmapImage bitmap = new BitmapImage(new Uri(searchResults[currentPage], UriKind.RelativeOrAbsolute)); 
-                    image.Source = bitmap;
-                    image.Margin = new Thickness(50, 50, 0, 0); 
-                    image.Width = 200;
-                    image.Height = 200;
-
-                    page.Children.Add(image);
-
-                    PageContent content = new PageContent();
-                    ((IAddChild)content).AddChild(page);
-                    document.Pages.Add(content);
-
-                    dialog.PrintDocument(document.DocumentPaginator, "Printing Image");
-
+                    downloadFolder = dialog.FolderName;
                 }
+                else
+                {
+                    MessageBox.Show("Folder selection cancelled.");
+                    downloadFolder = null;
+                }
+                return downloadFolder;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error occurred while getting download folder");
+                return null;
             }
         }
+        #endregion
+
+        #region Zoom Options
         private void ZoomInButton_Click(object sender, RoutedEventArgs e)
         {
-            if (claimsImg.Width < 1000)
+            try
             {
-                double zoomFactor = 1.2;
-                claimsImg.Width *= zoomFactor;
-                claimsImg.Height *= zoomFactor;
+                if (claimsImg.Width < 1000)
+                {
+                    double zoomFactor = 1.2;
+                    claimsImg.Width *= zoomFactor;
+                    claimsImg.Height *= zoomFactor;
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while while zooming in");
+            }
+
         }
 
         private void ZoomOutButton_Click(object sender, RoutedEventArgs e)
         {
-            double zoomFactor = 1.2;
-            claimsImg.Width /= zoomFactor;
-            claimsImg.Height /= zoomFactor;
+            try
+            {
+                double zoomFactor = 1.2;
+                claimsImg.Width /= zoomFactor;
+                claimsImg.Height /= zoomFactor;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while zooming out");
+            }
         }
-        private void FirstPageButton_Click(object sender, RoutedEventArgs e)
-        {
-            currentPage = 1;
-            ShowImage();
-            UpdatePaginationButtons();
-        }
+        #endregion
 
-        private void LastPageButton_Click(object sender, RoutedEventArgs e)
-        {
-            int totalPages = (int)Math.Ceiling((double)searchResults.Count / itemsPerPage);
-            currentPage = totalPages;
-            ShowImage();
-            UpdatePaginationButtons();
-        }
+        #region Resetting 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
-            txtSearch.Text = string.Empty;
-            Previous.Visibility = Visibility.Collapsed;
-            Next.Visibility = Visibility.Collapsed;
-            FirstPage.Visibility = Visibility.Collapsed;
-            LastPage.Visibility = Visibility.Collapsed;
-            Download.Visibility = Visibility.Collapsed;
-            DownloadAll.Visibility = Visibility.Collapsed;
-            Print.Visibility = Visibility.Collapsed;
-            ZoomInButton.Visibility = Visibility.Collapsed;
-            ZoomOutButton.Visibility = Visibility.Collapsed;
-            Reset.Visibility = Visibility.Collapsed;
-            paginationStackPanel.Visibility = Visibility.Collapsed;
-            claimsImg.Source = null;
-        }
+            try
+            {
+                txtSearch.Text = string.Empty;
+                HideAllUIElements();
+                claimsImg.Source = null;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occurred while resetting");
+            }
 
+        }
+        #endregion
+
+        #region Export Options
         private void ExportButton_Click(object sender, RoutedEventArgs e)
         {
-            PdfDocument document = new();
-            PdfPage page = document.AddPage();
-            XGraphics gfx = XGraphics.FromPdfPage(page);
-            XImage x_Image = XImage.FromFile(searchResults[currentPage-1]);
-            gfx.DrawImage(x_Image, 0, 0);
-            document.Save("output.pdf");
-            document.Close();
+            try
+            {
+                if (searchResults.Count == 0)
+                {
+                    MessageBox.Show("No Images to export");
+                    return;
+                }
+                var inputDialog = new ImageRangeInputDialog();
+                if (inputDialog.ShowDialog() == true)
+                {
+                    int startNumber = inputDialog.StartNumber;
+                    int endNumber = inputDialog.EndNumber;
+
+                    ExportPDfInRange(startNumber, endNumber);
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error exporting PDF");
+            }
+
+        }
+        private void ExportCurrent_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.ExportPDfInRange(currentPage, currentPage);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error in Exporting current page");
+            }
+        }
+        private void ExportAll_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.ExportPDfInRange(1, searchResults.Count);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error in Exporting all pdf");
+            }
+        }
+        private void ExportPDfInRange(int startNumber, int endNumber)
+        {
+            string filePath = "";
+            string filename = "";
+            string downloadFolder = GetDownloadFolder();
+            if (downloadFolder == null)
+            {
+                MessageBox.Show("Download folder not selected.");
+                return;
+            }
+            if (downloadFolder != null)
+            {
+                for (int i = startNumber; i <= endNumber && i <= searchResults.Count; i++)
+                {
+                    PdfDocument document = new PdfDocument();
+                    PdfPage page = document.AddPage();
+                    XGraphics gfx = XGraphics.FromPdfPage(page);
+                    XImage x_Image = XImage.FromFile(searchResults[i - 1]);
+                    BitmapImage bitmapImage = new BitmapImage(new Uri(searchResults[i - 1]));
+                    double imageWidth = bitmapImage.PixelWidth;
+                    double imageHeight = bitmapImage.PixelHeight;
+                    filename = Path.GetFileNameWithoutExtension(searchResults[i - 1]);
+                    filePath = Path.Combine(downloadFolder, filename + ".pdf");
+                    gfx.DrawImage(x_Image, 0, 0, imageWidth, imageHeight);
+                    document.Save(filePath);
+                    document.Close();
+                }
+            }
+
+
+            MessageBox.Show("PDF exported successfully to:" + filePath);
+        }
+        #endregion
+
+        //#region Print options
+        //private void Print_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+
+        //        if (searchResults.Count == 0)
+        //        {
+        //            MessageBox.Show("No Images to Print");
+        //            return;
+        //        }
+        //        var inputDialog = new Print();
+        //        if (inputDialog.ShowDialog() == true)
+        //        {
+        //            int startNumber = inputDialog.StartNumber;
+        //            int endNumber = inputDialog.EndNumber;
+
+        //            PrintInRange(startNumber, endNumber);
+        //        }
+        //    }
+
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("An Error occurred while printing");
+        //    }
+
+        //}
+        //private void PrintCurrent_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        this.PrintInRange(currentPage, currentPage);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error in Printing current page");
+        //    }
+        //}
+        //private void PrintAll_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        this.PrintInRange(1, searchResults.Count);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error in Printing all");
+        //    }
+        //}
+        //private void PrintInRange(int startNumber, int endNumber)
+        //{
+        //    try
+        //    {
+        //        PrintDialog pd = new();
+        //        if (pd.ShowDialog() == true)
+        //        {
+        //            for (int i = startNumber; i <= endNumber; i++)
+        //            {
+        //                claimsImg.Source = new BitmapImage(new Uri(searchResults[i - 1], UriKind.RelativeOrAbsolute));
+        //                pd.PrintVisual(claimsImg, "Print Image");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error in Print Range");
+        //    }
+        //}
+        //#endregion
+
+
+        private void claimsImg_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (claimsImg.Source is BitmapImage imgSrc)
+            {
+                ImagePopup imgPopup = new()
+                {
+                    ImageSource = imgSrc
+                };
+                imgPopup.ShowDialog();
+            }
         }
     }
 }
