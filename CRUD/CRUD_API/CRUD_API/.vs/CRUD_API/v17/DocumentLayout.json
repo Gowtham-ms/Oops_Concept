@@ -7,20 +7,16 @@
       "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\migrations\\20240503013705_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:migrations\\20240503013705_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\migrations\\20240503013705_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|solutionrelative:migrations\\20240503013705_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4C2C88F-BEA4-4AD0-870D-B031FEF81496}|CRUD_API.csproj|c:\\users\\msgow\\desktop\\my desktop\\consoleapp\\oops_concept\\crud\\crud_api\\crud_api\\database\\api_dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -60,7 +56,7 @@
               "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Controllers\\EmployeeController.cs",
               "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACEAAAAuAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAA3wDgAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T01:50:14.426Z",
               "EditorCaption": ""
@@ -73,38 +69,38 @@
               "RelativeDocumentMoniker": "Migrations\\20240503013705_Initial Migration.cs",
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Migrations\\20240503013705_Initial Migration.cs",
               "RelativeToolTip": "Migrations\\20240503013705_Initial Migration.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBAAAAARAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T01:37:05.166Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T01:30:29.941Z"
+              "WhenOpened": "2024-05-03T01:30:29.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-03T01:26:42.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-03T01:26:42.41Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "API_DbContext.cs",
               "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Database\\API_DbContext.cs",
               "RelativeDocumentMoniker": "Database\\API_DbContext.cs",
@@ -113,18 +109,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-03T01:22:12.66Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "Models\\Employee.cs",
-              "ToolTip": "C:\\Users\\msgow\\Desktop\\My desktop\\ConsoleApp\\Oops_Concept\\CRUD\\CRUD_API\\CRUD_API\\Models\\Employee.cs",
-              "RelativeToolTip": "Models\\Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T01:15:44.317Z"
             }
           ]
         }

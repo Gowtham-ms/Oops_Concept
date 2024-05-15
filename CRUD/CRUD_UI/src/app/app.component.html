@@ -1,0 +1,74 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      Employee
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">
+              Create
+            </div>
+            <div class="card-body">
+              <form [formGroup]="EmployeeFG" (ngSubmit)="OnSubmit()">
+                <div class="row">
+                  <input type="text" formControlName="employeeId" hidden>
+                  <div class="col-sm-12">
+                    <label>Name</label>
+                    <input type="text" formControlName="employeeName" class="form-control">
+                  </div>
+                  <div class="col-sm-12">
+                    <label>Mobile Number</label>
+                    <input type="text" formControlName="mobileNumber" class="form-control">
+                  </div>
+                  <div class="col-sm-12">
+                    <label>Email ID</label>
+                    <input type="text" formControlName="emailID" class="form-control">
+                  </div>
+                  <div *ngIf="!isVisible" class="col-sm-12 mt-2">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                  </div>
+                  <div *ngIf="isVisible" class="col-sm-12 mt-2">
+                    <button type="submit" class="btn btn-primary">Update </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-header">
+              List of Employees
+            </div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Mobile Number</td>
+                    <td>Email ID</td>
+                    <td>Actions</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let emp of EmpArray">
+                    <!-- // reading the value and binding the value to angualur -->
+                    <td>{{emp.employeeName}}</td>
+                    <td>{{emp.mobileNumber}}</td>
+                    <td>{{emp.emailID}}</td>
+                    <td><button type="submit" (click)="FillForm(emp)" class="btn btn-link">Edit</button>
+                      <button type="submit" (click)="Delete(emp)" class="btn btn-link">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
