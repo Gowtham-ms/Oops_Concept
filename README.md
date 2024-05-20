@@ -1,3 +1,34 @@
+ADO.NET (ActiveX Data Objects for .NET) is a set of classes included in the .NET Framework that facilitate communication between .NET applications and data sources, such as databases to insert update delete and read
+
+1. ExecuteNonQuery() 
+   is used to execute SQL commands against a database, where the command does not return any data. It is commonly used for executing SQL commands such as INSERT, UPDATE, DELETE, or DDL (Data Definition Language) statements like CREATE TABLE or ALTER TABLE.
+
+2. DataAdapter (SqlDataAdapter)
+   DataAdapter is a bridge between a dataset and a database. It retrieves data from the database, fills the dataset with data, and updates the database with changes made to the dataset. It consists of four main commands: `SelectCommand`, `InsertCommand`, `UpdateCommand`, and `DeleteCommand`.
+
+3. DataTable   
+DataTable represents one table of in-memory data. It consists of rows and columns and can be filled with data retrieved from a database using a DataAdapter.
+
+4. ExecuteScalar()
+   This method is used to execute a query that returns a single value (for example, an aggregate function like COUNT, SUM, etc.).
+
+5. ExecuteReader()
+   This method is used to execute a query that returns a forward-only, read-only stream of rows from a data source. It returns a `DataReader` object that provides a way to read data in a forward-only manner.
+
+6. DataSet
+   DataSet is an in-memory cache of data retrieved from a data source. It can contain multiple DataTables, relationships between DataTables, and constraints. It provides a disconnected data model, meaning it doesn't need an active connection to the database once data is retrieved.
+
+7. SqlCommand
+   represent SQL commands or stored procedures that are executed against a database. They are used to execute SQL queries, stored procedures, or other commands against the database.
+
+8. SqlConnection
+   represent connections to specific types of databases. They are used to establish connections to the database before executing commands and manage the connection's lifecycle.
+
+9. DataReader
+   DataReader provides a way to read data in a forward-only manner from a data source. It's typically used when you need to read large amounts of data efficiently and sequentially, without needing to store the data in memory.
+
+
+
 OOPS Concept with real world examples
 Class,
 Objects,
@@ -127,6 +158,7 @@ Child Class B : A
 
 if we inherit that method we can easily get the values of class A 
 
+------ SOLID Principles -------
 SOLID principle is nothing but design principle for software problems, we definitely have to use this principle to make our code loosely coupled
 S single responsibility priniciple SRP
 O open closed principle OCP 
@@ -137,10 +169,170 @@ D dependency inversion priniciple DIP
 
 1. Single responisibity prinicple : Each and every class or module should have only 1 reason to change 
 2. Open Closed Principle : Open for extension and closed for modification
+
 3. Liskov substituion principle : 
 
 bunch of toys like cars, trucks and airplanes
 is like saying that if you have a toy box, you can swap any toy with another one as long as they both do the same things
 if you can play with a car, you should also able to play with a truck or airplanes without any problems
 
-in programming you can say that you should be able to use any subclass of a class as a replacement for the parent class without breaking the program 
+in programming you can say that you should be able to use any child of a class as a replacement for the parent class without breaking the program 
+
+Introduced by Barbara Liskov
+
+If "S" is a subtype of "T" then the object of type "T" maybe replaced with object of type "S"
+
+
+For Example if we have 2 class 1 is parent and other is child
+A - Parent
+B - Child
+
+A objA = new A();
+B objB = new B();
+
+in LSP
+we need to substitute A with B 
+A objA = new B();
+
+Replace A with B
+
+we have 3 rules in LSP we need to follow these rules to make our code loosely coupled
+1. Child class object must be a substitute for parent class object and it should not give an incorrect output
+2. Child class must have all the methods from the parent,, it should not throw not implemented exceptions
+if a parent class has 4 methods then child class also have 4 methods 
+3. Child doesn't change the signature of the parent class
+if A has 2 methods and 2 parameters then child B also have 2 methods and 2 parementers 
+
+LSP is extension of OCP
+
+4. ISP - Interface segregation Principle
+
+A class must not have to implement any interface which is not required by the class 
+
+5. DIP - Dependency Inversion Principle
+
+High level class doesn't depend on low level class and low level class doesn't depend on high level class and both should be depend on abstraction 
+
+we can acheive abstraction using Interface or Abstract class , but in real world people will use Interface
+
+
+
+--- Dependency Injection in MVC ---
+
+1. Injecting the Dependency during runtime
+2. A class doesn't create an object/instance of another class , but instead it will ask other class to create
+3. Loosely coupled
+
+Instead of we doing our work asking someone to do our work
+
+1. Nuget package from npm -> unit config.mvc
+2. Register it globally -> global.asax
+3. Interface -> Repository
+4. Service and inherit the interface // low level class depending on abstraction
+5. Register the repository into unityconfig.cs
+6. Whenever we inject the interface in contructor parameter at that time it will map the repository class and get the object
+7. After that it will help us to acheive the DI. Class doesn't creating any object of any class inside the high level class instead our UnityMVC will do that work
+8. We will get the values by not depending on any class
+
+
+I want an application to get the students and whoever is teacher of that particular student
+
+Gowhtma -> James 
+
+ID Student Teacher
+1. Gowtham James
+
+
+
+MVC - an architecture in .net framework
+
+Model , View, Controller
+
+
+Model - Will take care of database access related stuffs
+View - What ever user see in his screen are all view which is UI part
+Controller - It will manipulate the model and also update view based on the manipulation
+
+
+All 4 are used to pass data but each has unique features
+ViewBag -> Pass data from controller to view
+ViewData -> Pass data from controller to view 
+TempData -> Pass data from one controller to another controller (one action to another action)
+Session -> We can pass data everywhere within the application , but it will maintain only for 20 minutes but we can change
+
+Tomorrow
+
+Real time CRUD application using Entity Framework MVC application
+
+
+Entity Framework is ORM tool => Object Relational Mapper
+Which will connect our database automatically
+
+Tomorrow
+From the scratch 
+Angular as front and Dotnet core as backend
+
+
+Steps to create angular application
+1. We need to download node.js from the node website 
+2. We need to install angular cli npm install
+3. we need to create an angular application using --> ng new ApplicationName --no-standalone => Angular 17
+4. So after that we can open our angular application using --> code .
+5. run the application using ng serve --o
+6. Adding service to connect our api from angular --> this service will use angular library HttpClientModule
+7. for connecting our web api to angular we're creating a service : ng g s Employee
+to call the api from angular we have one thing called "httpclientmodule"
+we have 2 things in angular : observables and subscribe
+Observables : it will give values from api , using subscribe we need to get values from the observables
+
+
+i.  Angular from basics
+ii. Web application hosting in IIS
+
+Create component in 2 ways :
+1. manual and 2. angular cli
+
+
+string interpolation
+
+Data Binding in angular 
+one way data binding => how to pass values from view to component in Event Binding 
+two way data binding => [(ngModel)]
+
+
+
+
+Property Binding 
+= Binding html property inside the html tag is property binding
+
+Event Binding
+==> Whatever we are doing in the browser which will consider it as event (keyboard events and mouse events)
+we can handle the event by using $event function
+
+Directives 
+Is used to change the behavior, appearance or layout of the elements
+
+3 types of directives
+1. Component Directives
+2. Structural Directives
+3. Attribute Directives
+
+
+directivese : ngFor ngIf ngSwitch , ngElse
+
+
+Tomorrow : 
+Pipes : Date
+Routing , 
+Direct routing
+Parameter routing
+
+
+linq query to select , join tables 
+How to deploy in iis server
+
+
+Linq : Language Integrated Query
+
+Query syntax integrated to our application
+
